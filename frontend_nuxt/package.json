@@ -1,0 +1,19 @@
+{
+  "name": "shindary-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/ui": "^2.11.1",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  }
+}
