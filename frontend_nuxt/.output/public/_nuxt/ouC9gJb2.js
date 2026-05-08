@@ -1,0 +1,1 @@
+import{_ as e}from"./D_CfPd5a.js";import{h as t,o as a}from"./BRJDV0F4.js";import"./BBnuQyT9.js";import"./Lg8g8wdP.js";import"./CKHfAjCP.js";const l={__name:"index",setup(p){return(r,c)=>{const o=e;return a(),t(o,{"page-slug":"company-profile","fallback-title":"Company Profile"})}}};export{l as default};

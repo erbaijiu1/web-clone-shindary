@@ -1,0 +1,1 @@
+import{_ as o}from"./D_CfPd5a.js";import{h as e,o as r}from"./BRJDV0F4.js";import"./BBnuQyT9.js";import"./Lg8g8wdP.js";import"./CKHfAjCP.js";const i={__name:"index",setup(a){return(c,p)=>{const t=o;return r(),e(t,{"page-slug":"our-culture","fallback-title":"Our Culture"})}}};export{i as default};

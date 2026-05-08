@@ -1,0 +1,1 @@
+{"file":"index-Tk0bfjbX.js","mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;QACoB,aAAU;AAAA,QAAW,kBAAe;AAAA;;;;;;;;;;","names":[],"sources":["../../../../pages/our-team/index.vue"],"sourcesContent":["<template>\n  <AboutSubpagePage page-slug=\"our-team\" fallback-title=\"Our Team\" />\n</template>\n\n<script setup>\ndefinePageMeta({\n  layout: false\n})\n</script>"],"version":3}

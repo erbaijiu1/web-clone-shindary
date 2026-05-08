@@ -1,5 +1,5 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { hasInjectionContext, getCurrentInstance, defineAsyncComponent, defineComponent, h, inject, computed, unref, shallowRef, provide, shallowReactive, ref, Suspense, Fragment, createApp, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, reactive, effectScope, mergeProps, getCurrentScope, toRef, withCtx, nextTick, isReadonly, useSSRContext, isRef, isShallow, isReactive, toRaw } from 'vue';
-import { p as parseURL, e as encodePath, k as decodePath, c as createError$1, l as hasProtocol, m as isScriptProtocol, h as joinURL, w as withQuery, s as sanitizeStatusCode, n as getContext, $ as $fetch, o as defu, q as createHooks, r as executeAsync } from '../nitro/nitro.mjs';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { hasInjectionContext, inject, getCurrentInstance, defineAsyncComponent, defineComponent, h, computed, unref, shallowRef, provide, shallowReactive, ref, Suspense, Fragment, createApp, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, reactive, effectScope, mergeProps, getCurrentScope, toRef, withCtx, nextTick, isReadonly, useSSRContext, isRef, isShallow, isReactive, toRaw } from 'vue';
+import { c as createError$1, p as parseURL, e as encodePath, k as decodePath, l as hasProtocol, m as isScriptProtocol, h as joinURL, w as withQuery, s as sanitizeStatusCode, n as getContext, $ as $fetch, o as defu, q as createHooks, r as executeAsync } from '../nitro/nitro.mjs';
 import { b as baseURL } from '../routes/renderer.mjs';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode, ssrRenderAttrs } from 'vue/server-renderer';
@@ -407,16 +407,150 @@ function getRouteRules(arg) {
     return {};
   }
 }
+const __nuxt_page_meta$f = {
+  layout: false
+};
+const __nuxt_page_meta$e = {
+  layout: false
+};
+const __nuxt_page_meta$d = {
+  layout: false
+};
+const __nuxt_page_meta$c = {
+  layout: false
+};
+const __nuxt_page_meta$b = {
+  layout: false
+};
+const __nuxt_page_meta$a = {
+  layout: false
+};
+const __nuxt_page_meta$9 = {
+  layout: false
+};
+const __nuxt_page_meta$8 = {
+  layout: false
+};
+const __nuxt_page_meta$7 = {
+  layout: false
+};
+const __nuxt_page_meta$6 = {
+  layout: false
+};
+const __nuxt_page_meta$5 = {
+  layout: false
+};
+const __nuxt_page_meta$4 = {
+  layout: false
+};
+const __nuxt_page_meta$3 = {
+  layout: false
+};
+const __nuxt_page_meta$2 = {
+  layout: false
+};
+const __nuxt_page_meta$1 = {
+  layout: false
+};
+const __nuxt_page_meta = {
+  layout: false
+};
 const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-yo_9BK7l.mjs')
+    meta: __nuxt_page_meta$f || {},
+    component: () => import('./index-C1iDZdn2.mjs')
+  },
+  {
+    name: "news",
+    path: "/news",
+    meta: __nuxt_page_meta$e || {},
+    component: () => import('./index-nJ04f3kj.mjs')
+  },
+  {
+    name: "news-slug",
+    path: "/news/:slug()",
+    meta: __nuxt_page_meta$d || {},
+    component: () => import('./_slug_-B16awzon.mjs')
+  },
+  {
+    name: "video",
+    path: "/video",
+    meta: __nuxt_page_meta$c || {},
+    component: () => import('./index-D9nIuBbc.mjs')
+  },
+  {
+    name: "contact",
+    path: "/contact",
+    meta: __nuxt_page_meta$b || {},
+    component: () => import('./index-B09xBNoQ.mjs')
+  },
+  {
+    name: "categorySlug",
+    path: "/:categorySlug()",
+    meta: __nuxt_page_meta$a || {},
+    component: () => import('./_categorySlug_-adSQl_Zs.mjs')
+  },
+  {
+    name: "about-us",
+    path: "/about-us",
+    meta: __nuxt_page_meta$9 || {},
+    component: () => import('./index-w11rmIjv.mjs')
+  },
+  {
+    name: "download",
+    path: "/download",
+    meta: __nuxt_page_meta$8 || {},
+    component: () => import('./index-BCp7YmGI.mjs')
+  },
+  {
+    name: "our-team",
+    path: "/our-team",
+    meta: __nuxt_page_meta$7 || {},
+    component: () => import('./index-Tk0bfjbX.mjs')
   },
   {
     name: "products",
     path: "/products",
-    component: () => import('./index-BEt7ydLI.mjs')
+    meta: __nuxt_page_meta$6 || {},
+    component: () => import('./index-CCGIhyjv.mjs')
+  },
+  {
+    name: "products-slug",
+    path: "/products/:slug()",
+    meta: __nuxt_page_meta$5 || {},
+    component: () => import('./_slug_-DdQDuD6m.mjs')
+  },
+  {
+    name: "our-culture",
+    path: "/our-culture",
+    meta: __nuxt_page_meta$4 || {},
+    component: () => import('./index-BAaEXfj-.mjs')
+  },
+  {
+    name: "our-service",
+    path: "/our-service",
+    meta: __nuxt_page_meta$3 || {},
+    component: () => import('./index-BAoqLEDU.mjs')
+  },
+  {
+    name: "sales-network",
+    path: "/sales-network",
+    meta: __nuxt_page_meta$2 || {},
+    component: () => import('./index-DlD0KcZG.mjs')
+  },
+  {
+    name: "company-profile",
+    path: "/company-profile",
+    meta: __nuxt_page_meta$1 || {},
+    component: () => import('./index-BH7UGAHT.mjs')
+  },
+  {
+    name: "customer-center",
+    path: "/customer-center",
+    meta: __nuxt_page_meta || {},
+    component: () => import('./index-CnXG_ISI.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1081,7 +1215,7 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-D3qpGA32.mjs'));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-CChILXar.mjs'));
     const _Error = defineAsyncComponent(() => import('./error-500-DEl71aV0.mjs'));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
@@ -1174,5 +1308,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { _export_sfc as _, useNuxtApp as a, useRuntimeConfig as b, nuxtLinkDefaults as c, asyncDataDefaults as d, entry_default as default, encodeRoutePath as e, createError as f, fetchDefaults as g, navigateTo as n, resolveRouteObject as r, tryUseNuxtApp as t, useRouter as u };
+export { _export_sfc as _, useRoute as a, useNuxtApp as b, createError as c, asyncDataDefaults as d, entry_default as default, useRouter as e, fetchDefaults as f, encodeRoutePath as g, nuxtLinkDefaults as h, navigateTo as n, resolveRouteObject as r, tryUseNuxtApp as t, useRuntimeConfig as u };
 //# sourceMappingURL=server.mjs.map

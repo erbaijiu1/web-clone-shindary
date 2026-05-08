@@ -398,16 +398,150 @@ function getRouteRules(arg) {
     return {};
   }
 }
+const __nuxt_page_meta$f = {
+  layout: false
+};
+const __nuxt_page_meta$e = {
+  layout: false
+};
+const __nuxt_page_meta$d = {
+  layout: false
+};
+const __nuxt_page_meta$c = {
+  layout: false
+};
+const __nuxt_page_meta$b = {
+  layout: false
+};
+const __nuxt_page_meta$a = {
+  layout: false
+};
+const __nuxt_page_meta$9 = {
+  layout: false
+};
+const __nuxt_page_meta$8 = {
+  layout: false
+};
+const __nuxt_page_meta$7 = {
+  layout: false
+};
+const __nuxt_page_meta$6 = {
+  layout: false
+};
+const __nuxt_page_meta$5 = {
+  layout: false
+};
+const __nuxt_page_meta$4 = {
+  layout: false
+};
+const __nuxt_page_meta$3 = {
+  layout: false
+};
+const __nuxt_page_meta$2 = {
+  layout: false
+};
+const __nuxt_page_meta$1 = {
+  layout: false
+};
+const __nuxt_page_meta = {
+  layout: false
+};
 const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-yo_9BK7l.js")
+    meta: __nuxt_page_meta$f || {},
+    component: () => import("./_nuxt/index-C1iDZdn2.js")
+  },
+  {
+    name: "news",
+    path: "/news",
+    meta: __nuxt_page_meta$e || {},
+    component: () => import("./_nuxt/index-nJ04f3kj.js")
+  },
+  {
+    name: "news-slug",
+    path: "/news/:slug()",
+    meta: __nuxt_page_meta$d || {},
+    component: () => import("./_nuxt/_slug_-B16awzon.js")
+  },
+  {
+    name: "video",
+    path: "/video",
+    meta: __nuxt_page_meta$c || {},
+    component: () => import("./_nuxt/index-D9nIuBbc.js")
+  },
+  {
+    name: "contact",
+    path: "/contact",
+    meta: __nuxt_page_meta$b || {},
+    component: () => import("./_nuxt/index-B09xBNoQ.js")
+  },
+  {
+    name: "categorySlug",
+    path: "/:categorySlug()",
+    meta: __nuxt_page_meta$a || {},
+    component: () => import("./_nuxt/_categorySlug_-adSQl_Zs.js")
+  },
+  {
+    name: "about-us",
+    path: "/about-us",
+    meta: __nuxt_page_meta$9 || {},
+    component: () => import("./_nuxt/index-w11rmIjv.js")
+  },
+  {
+    name: "download",
+    path: "/download",
+    meta: __nuxt_page_meta$8 || {},
+    component: () => import("./_nuxt/index-BCp7YmGI.js")
+  },
+  {
+    name: "our-team",
+    path: "/our-team",
+    meta: __nuxt_page_meta$7 || {},
+    component: () => import("./_nuxt/index-Tk0bfjbX.js")
   },
   {
     name: "products",
     path: "/products",
-    component: () => import("./_nuxt/index-BEt7ydLI.js")
+    meta: __nuxt_page_meta$6 || {},
+    component: () => import("./_nuxt/index-CCGIhyjv.js")
+  },
+  {
+    name: "products-slug",
+    path: "/products/:slug()",
+    meta: __nuxt_page_meta$5 || {},
+    component: () => import("./_nuxt/_slug_-DdQDuD6m.js")
+  },
+  {
+    name: "our-culture",
+    path: "/our-culture",
+    meta: __nuxt_page_meta$4 || {},
+    component: () => import("./_nuxt/index-BAaEXfj-.js")
+  },
+  {
+    name: "our-service",
+    path: "/our-service",
+    meta: __nuxt_page_meta$3 || {},
+    component: () => import("./_nuxt/index-BAoqLEDU.js")
+  },
+  {
+    name: "sales-network",
+    path: "/sales-network",
+    meta: __nuxt_page_meta$2 || {},
+    component: () => import("./_nuxt/index-DlD0KcZG.js")
+  },
+  {
+    name: "company-profile",
+    path: "/company-profile",
+    meta: __nuxt_page_meta$1 || {},
+    component: () => import("./_nuxt/index-BH7UGAHT.js")
+  },
+  {
+    name: "customer-center",
+    path: "/customer-center",
+    meta: __nuxt_page_meta || {},
+    component: () => import("./_nuxt/index-CnXG_ISI.js")
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -1072,7 +1206,7 @@ const _sfc_main$1 = {
     const statusText = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-D3qpGA32.js"));
+    const _Error404 = defineAsyncComponent(() => import("./_nuxt/error-404-CChILXar.js"));
     const _Error = defineAsyncComponent(() => import("./_nuxt/error-500-DEl71aV0.js"));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
@@ -1166,17 +1300,18 @@ let entry;
 const entry_default = ((ssrContext) => entry(ssrContext));
 export {
   _export_sfc as _,
-  useNuxtApp as a,
-  useRuntimeConfig as b,
-  nuxtLinkDefaults as c,
+  useRoute as a,
+  useNuxtApp as b,
+  createError as c,
   asyncDataDefaults as d,
   entry_default as default,
-  encodeRoutePath as e,
-  createError as f,
-  fetchDefaults as g,
+  useRouter as e,
+  fetchDefaults as f,
+  encodeRoutePath as g,
+  nuxtLinkDefaults as h,
   navigateTo as n,
   resolveRouteObject as r,
   tryUseNuxtApp as t,
-  useRouter as u
+  useRuntimeConfig as u
 };
 //# sourceMappingURL=server.mjs.map

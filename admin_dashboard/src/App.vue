@@ -1,61 +1,284 @@
 <template>
   <el-container class="layout-container">
-    <el-aside width="200px">
-      <el-menu default-active="1" class="el-menu-vertical">
-        <el-menu-item index="1">
-          <el-icon><Menu /></el-icon>
-          <span>Dashboard</span>
+    <el-aside width="240px" class="aside-panel">
+      <div class="brand-block">
+        <h1>Shindary Admin</h1>
+        <p>Products and news entry</p>
+      </div>
+      <el-menu :default-active="activePanel" class="el-menu-vertical" @select="handleMenuSelect">
+        <el-menu-item index="products">
+          <el-icon><Goods /></el-icon>
+          <span>Products</span>
         </el-menu-item>
-        <el-sub-menu index="2">
-          <template #title>
-            <el-icon><Goods /></el-icon>
-            <span>Products</span>
-          </template>
-          <el-menu-item index="2-1">Shindary Site</el-menu-item>
-          <el-menu-item index="2-2">HC-Camp Site</el-menu-item>
-        </el-sub-menu>
-        <el-menu-item index="3">
-          <el-icon><Setting /></el-icon>
-          <span>Settings</span>
+        <el-menu-item index="articles">
+          <el-icon><Document /></el-icon>
+          <span>News</span>
         </el-menu-item>
       </el-menu>
     </el-aside>
-    
+
     <el-container>
-      <el-header style="text-align: right; font-size: 12px">
-        <div class="toolbar">
-          <span>Admin User</span>
+      <el-header class="header-panel">
+        <div>
+          <h2>Content Entry</h2>
+          <p>Database-backed products and articles for homepage and listing pages</p>
         </div>
+        <el-select v-model="selectedSiteId" placeholder="Select site" class="site-select">
+          <el-option v-for="site in sites" :key="site.id" :label="site.name" :value="site.id" />
+        </el-select>
       </el-header>
-      
-      <el-main>
-        <h2>Welcome to Multi-Site Admin Dashboard</h2>
-        <el-table :data="tableData" style="width: 100%; margin-top: 20px;">
-          <el-table-column prop="date" label="Date" width="140" />
-          <el-table-column prop="name" label="Name" width="120" />
-          <el-table-column prop="site" label="Site" />
-        </el-table>
+
+      <el-main class="main-panel">
+        <el-row :gutter="20">
+          <el-col :lg="10" :span="24">
+            <el-card shadow="never" class="card-block">
+              <template #header>
+                <div class="card-header">
+                  <span>{{ activePanel === 'products' ? 'Add Product' : 'Add News Article' }}</span>
+                </div>
+              </template>
+
+              <el-form v-if="activePanel === 'products'" label-position="top" :model="productForm">
+                <el-form-item label="Product Name">
+                  <el-input v-model="productForm.name" />
+                </el-form-item>
+                <el-form-item label="Slug">
+                  <el-input v-model="productForm.slug" />
+                </el-form-item>
+                <el-form-item label="Category">
+                  <el-select v-model="productForm.category_id" placeholder="Select category">
+                    <el-option v-for="category in categories" :key="category.id" :label="category.name" :value="category.id" />
+                  </el-select>
+                </el-form-item>
+                <el-form-item label="Image URL">
+                  <el-input v-model="productForm.image_url" />
+                </el-form-item>
+                <el-form-item label="Description">
+                  <el-input v-model="productForm.description" type="textarea" :rows="4" />
+                </el-form-item>
+                <el-button type="primary" @click="createProduct">Create Product</el-button>
+              </el-form>
+
+              <el-form v-else label-position="top" :model="articleForm">
+                <el-form-item label="Article Title">
+                  <el-input v-model="articleForm.title" />
+                </el-form-item>
+                <el-form-item label="Slug">
+                  <el-input v-model="articleForm.slug" />
+                </el-form-item>
+                <el-form-item label="Image URL">
+                  <el-input v-model="articleForm.image_url" />
+                </el-form-item>
+                <el-form-item label="Published At">
+                  <el-date-picker v-model="articleForm.published_at" type="datetime" value-format="YYYY-MM-DDTHH:mm:ss" />
+                </el-form-item>
+                <el-form-item label="Excerpt">
+                  <el-input v-model="articleForm.excerpt" type="textarea" :rows="3" />
+                </el-form-item>
+                <el-form-item label="Content HTML">
+                  <el-input v-model="articleForm.content" type="textarea" :rows="8" />
+                </el-form-item>
+                <el-switch v-model="articleForm.is_featured" active-text="Featured" inactive-text="Normal" />
+                <div class="form-actions">
+                  <el-button type="primary" @click="createArticle">Create Article</el-button>
+                </div>
+              </el-form>
+            </el-card>
+          </el-col>
+
+          <el-col :lg="14" :span="24">
+            <el-card shadow="never" class="card-block">
+              <template #header>
+                <div class="card-header">
+                  <span>{{ activePanel === 'products' ? 'Products' : 'Articles' }}</span>
+                  <el-button text @click="refreshActive">Refresh</el-button>
+                </div>
+              </template>
+
+              <el-table v-if="activePanel === 'products'" :data="products" style="width: 100%" height="620">
+                <el-table-column prop="id" label="ID" width="80" />
+                <el-table-column prop="name" label="Name" min-width="220" />
+                <el-table-column prop="slug" label="Slug" min-width="180" />
+                <el-table-column prop="image_url" label="Image" min-width="200" />
+                <el-table-column label="Actions" width="120">
+                  <template #default="scope">
+                    <el-button type="danger" link @click="removeProduct(scope.row.id)">Delete</el-button>
+                  </template>
+                </el-table-column>
+              </el-table>
+
+              <el-table v-else :data="articles" style="width: 100%" height="620">
+                <el-table-column prop="id" label="ID" width="80" />
+                <el-table-column prop="title" label="Title" min-width="240" />
+                <el-table-column prop="slug" label="Slug" min-width="180" />
+                <el-table-column prop="published_at" label="Published" min-width="180" />
+                <el-table-column label="Actions" width="120">
+                  <template #default="scope">
+                    <el-button type="danger" link @click="removeArticle(scope.row.id)">Delete</el-button>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </el-card>
+          </el-col>
+        </el-row>
       </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { Menu, Goods, Setting } from '@element-plus/icons-vue'
+import { onMounted, reactive, ref, watch } from 'vue'
+import axios from 'axios'
+import { Document, Goods } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
 
-const tableData = ref([
-  {
-    date: '2026-05-07',
-    name: 'Engine Part A',
-    site: 'shindary.com',
-  },
-  {
-    date: '2026-05-08',
-    name: 'Suspension B',
-    site: 'hc-camp.com',
-  },
-])
+const api = axios.create({ baseURL: 'http://127.0.0.1:8000/api/v1/admin' })
+
+const activePanel = ref('products')
+const sites = ref<any[]>([])
+const categories = ref<any[]>([])
+const products = ref<any[]>([])
+const articles = ref<any[]>([])
+const selectedSiteId = ref<number | null>(null)
+
+const productForm = reactive({
+  name: '',
+  slug: '',
+  category_id: undefined as number | undefined,
+  image_url: '',
+  description: '',
+  name_en: '',
+  name_es: '',
+  part_number: '',
+  oem_number: '',
+  car_model: ''
+})
+
+const articleForm = reactive({
+  title: '',
+  slug: '',
+  image_url: '',
+  excerpt: '',
+  content: '',
+  published_at: '',
+  is_featured: true,
+  sort_order: 0
+})
+
+const loadSites = async () => {
+  const { data } = await api.get('/sites')
+  sites.value = data
+  if (!selectedSiteId.value && data.length > 0) {
+    selectedSiteId.value = data[0].id
+  }
+}
+
+const loadCategories = async () => {
+  if (!selectedSiteId.value) return
+  const { data } = await api.get('/categories', { params: { site_id: selectedSiteId.value } })
+  categories.value = data
+}
+
+const loadProducts = async () => {
+  const { data } = await api.get('/products')
+  products.value = data
+}
+
+const loadArticles = async () => {
+  const { data } = await api.get('/articles')
+  articles.value = data
+}
+
+const refreshActive = async () => {
+  if (activePanel.value === 'products') {
+    await loadProducts()
+    return
+  }
+  await loadArticles()
+}
+
+const createProduct = async () => {
+  if (!selectedSiteId.value || !productForm.category_id) {
+    ElMessage.error('Select site and category first')
+    return
+  }
+
+  await api.post('/products', {
+    name: productForm.name,
+    slug: productForm.slug,
+    description: productForm.description,
+    image_url: productForm.image_url,
+    name_en: productForm.name_en,
+    name_es: productForm.name_es,
+    part_number: productForm.part_number,
+    oem_number: productForm.oem_number,
+    car_model: productForm.car_model
+  }, {
+    params: {
+      site_id: selectedSiteId.value,
+      category_id: productForm.category_id
+    }
+  })
+
+  ElMessage.success('Product created')
+  Object.assign(productForm, {
+    name: '', slug: '', category_id: undefined, image_url: '', description: '', name_en: '', name_es: '', part_number: '', oem_number: '', car_model: ''
+  })
+  await loadProducts()
+}
+
+const createArticle = async () => {
+  if (!selectedSiteId.value) {
+    ElMessage.error('Select site first')
+    return
+  }
+
+  await api.post('/articles', {
+    title: articleForm.title,
+    slug: articleForm.slug,
+    image_url: articleForm.image_url,
+    excerpt: articleForm.excerpt,
+    content: articleForm.content,
+    published_at: articleForm.published_at || null,
+    is_featured: articleForm.is_featured,
+    sort_order: articleForm.sort_order
+  }, {
+    params: { site_id: selectedSiteId.value }
+  })
+
+  ElMessage.success('Article created')
+  Object.assign(articleForm, {
+    title: '', slug: '', image_url: '', excerpt: '', content: '', published_at: '', is_featured: true, sort_order: 0
+  })
+  await loadArticles()
+}
+
+const removeProduct = async (id: number) => {
+  await api.delete(`/products/${id}`)
+  ElMessage.success('Product deleted')
+  await loadProducts()
+}
+
+const removeArticle = async (id: number) => {
+  await api.delete(`/articles/${id}`)
+  ElMessage.success('Article deleted')
+  await loadArticles()
+}
+
+const handleMenuSelect = (key: string) => {
+  activePanel.value = key
+}
+
+watch(selectedSiteId, async () => {
+  await loadCategories()
+})
+
+onMounted(async () => {
+  await loadSites()
+  await loadCategories()
+  await loadProducts()
+  await loadArticles()
+})
 </script>
 
 <style>
@@ -63,24 +286,82 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background: #f3f7fb;
 }
+
 #app {
   height: 100vh;
 }
+
 .layout-container {
   height: 100%;
 }
-.el-header {
-  background-color: #b3c0d1;
-  color: #333;
-  line-height: 60px;
+
+.aside-panel {
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  color: #fff;
+  border-right: none;
 }
-.el-aside {
-  color: #333;
-  background-color: #fff;
-  border-right: solid 1px #e6e6e6;
+
+.brand-block {
+  padding: 24px 20px 8px;
 }
+
+.brand-block h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.brand-block p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+}
+
 .el-menu-vertical {
   border-right: none;
+  background: transparent;
+}
+
+.header-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-panel h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.header-panel p {
+  margin: 6px 0 0;
+  color: #64748b;
+}
+
+.site-select {
+  width: 220px;
+}
+
+.main-panel {
+  padding: 24px;
+}
+
+.card-block {
+  border-radius: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.form-actions {
+  margin-top: 16px;
 }
 </style>

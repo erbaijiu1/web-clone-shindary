@@ -1,0 +1,1 @@
+import{_ as t}from"./D_CfPd5a.js";import{h as e,o as a}from"./BRJDV0F4.js";import"./BBnuQyT9.js";import"./Lg8g8wdP.js";import"./CKHfAjCP.js";const u={__name:"index",setup(r){return(m,p)=>{const o=t;return a(),e(o,{"page-slug":"our-team","fallback-title":"Our Team"})}}};export{u as default};
