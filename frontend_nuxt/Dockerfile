@@ -21,6 +21,7 @@ COPY --from=builder /app/.output ./.output
 
 # 暴露端口
 EXPOSE 3000
-
+ENV HOST=0.0.0.0
+ENV PORT=3000
 # 启动 SSR 渲染引擎
 CMD ["node", ".output/server/index.mjs"]
