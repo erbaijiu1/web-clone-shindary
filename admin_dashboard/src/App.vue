@@ -1,5 +1,20 @@
 <template>
-  <el-container class="layout-container">
+  <div v-if="!isLoggedIn" class="login-wrapper">
+    <el-card class="login-card">
+      <template #header><h2>Shindary Admin Login</h2></template>
+      <el-form label-position="top">
+        <el-form-item label="Username">
+          <el-input v-model="loginForm.username" />
+        </el-form-item>
+        <el-form-item label="Password">
+          <el-input v-model="loginForm.password" type="password" @keyup.enter="handleLogin" />
+        </el-form-item>
+        <el-button type="primary" class="w-full" style="width: 100%" @click="handleLogin">Sign In</el-button>
+      </el-form>
+    </el-card>
+  </div>
+
+  <el-container v-else class="layout-container">
     <el-aside width="240px" class="aside-panel">
       <div class="brand-block">
         <h1>Shindary Admin</h1>
@@ -23,9 +38,12 @@
           <h2>Content Entry</h2>
           <p>Database-backed products and articles for homepage and listing pages</p>
         </div>
-        <el-select v-model="selectedSiteId" placeholder="Select site" class="site-select">
-          <el-option v-for="site in sites" :key="site.id" :label="site.name" :value="site.id" />
-        </el-select>
+        <div class="header-actions">
+          <el-select v-model="selectedSiteId" placeholder="Select site" class="site-select">
+            <el-option v-for="site in sites" :key="site.id" :label="site.name" :value="site.id" />
+          </el-select>
+          <el-button style="margin-left: 10px;" type="danger" text @click="handleLogout">Logout</el-button>
+        </div>
       </el-header>
 
       <el-main class="main-panel">
@@ -34,7 +52,7 @@
             <el-card shadow="never" class="card-block">
               <template #header>
                 <div class="card-header">
-                  <span>{{ activePanel === 'products' ? 'Add Product' : 'Add News Article' }}</span>
+                  <span>{{ activePanel === 'products' ? (editingProductId ? 'Edit Product' : 'Add Product') : 'Add News Article' }}</span>
                 </div>
               </template>
 
@@ -56,7 +74,10 @@
                 <el-form-item label="Description">
                   <el-input v-model="productForm.description" type="textarea" :rows="4" />
                 </el-form-item>
-                <el-button type="primary" @click="createProduct">Create Product</el-button>
+                <div class="form-actions">
+                  <el-button type="primary" @click="submitProduct">{{ editingProductId ? 'Update Product' : 'Create Product' }}</el-button>
+                  <el-button v-if="editingProductId" @click="cancelEditProduct">Cancel</el-button>
+                </div>
               </el-form>
 
               <el-form v-else label-position="top" :model="articleForm">
@@ -100,8 +121,9 @@
                 <el-table-column prop="name" label="Name" min-width="220" />
                 <el-table-column prop="slug" label="Slug" min-width="180" />
                 <el-table-column prop="image_url" label="Image" min-width="200" />
-                <el-table-column label="Actions" width="120">
+                <el-table-column label="Actions" width="160">
                   <template #default="scope">
+                    <el-button type="primary" link @click="editProduct(scope.row)">Edit</el-button>
                     <el-button type="danger" link @click="removeProduct(scope.row.id)">Delete</el-button>
                   </template>
                 </el-table-column>
@@ -137,12 +159,30 @@ const apiOrigin = import.meta.env.VITE_API_ORIGIN || 'http://127.0.0.1:8000'
 
 const api = axios.create({ baseURL: `${apiOrigin}/${siteCode}/api/v1/admin` })
 
+const isLoggedIn = ref(!!localStorage.getItem('admin_token'))
+const loginForm = reactive({ username: '', password: '' })
+
+const handleLogin = () => {
+  if (loginForm.username === 'admin' && loginForm.password === 'shindary2026') {
+    localStorage.setItem('admin_token', 'mock_token')
+    isLoggedIn.value = true
+  } else {
+    ElMessage.error('Invalid credentials (try admin / shindary2026)')
+  }
+}
+
+const handleLogout = () => {
+  localStorage.removeItem('admin_token')
+  isLoggedIn.value = false
+}
+
 const activePanel = ref('products')
 const sites = ref<any[]>([])
 const categories = ref<any[]>([])
 const products = ref<any[]>([])
 const articles = ref<any[]>([])
 const selectedSiteId = ref<number | null>(null)
+const editingProductId = ref<number | null>(null)
 
 const productForm = reactive({
   name: '',
@@ -200,34 +240,68 @@ const refreshActive = async () => {
   await loadArticles()
 }
 
-const createProduct = async () => {
+const editProduct = (product: any) => {
+  editingProductId.value = product.id
+  Object.assign(productForm, {
+    name: product.name,
+    slug: product.slug,
+    category_id: product.category_id,
+    image_url: product.image_url,
+    description: product.description,
+    name_en: product.name_en || '',
+    name_es: product.name_es || '',
+    part_number: product.part_number || '',
+    oem_number: product.oem_number || '',
+    car_model: product.car_model || ''
+  })
+}
+
+const cancelEditProduct = () => {
+  editingProductId.value = null
+  Object.assign(productForm, {
+    name: '', slug: '', category_id: undefined, image_url: '', description: '', name_en: '', name_es: '', part_number: '', oem_number: '', car_model: ''
+  })
+}
+
+const submitProduct = async () => {
   if (!selectedSiteId.value || !productForm.category_id) {
     ElMessage.error('Select site and category first')
     return
   }
 
-  await api.post('/products', {
-    name: productForm.name,
-    slug: productForm.slug,
-    description: productForm.description,
-    image_url: productForm.image_url,
-    name_en: productForm.name_en,
-    name_es: productForm.name_es,
-    part_number: productForm.part_number,
-    oem_number: productForm.oem_number,
-    car_model: productForm.car_model
-  }, {
-    params: {
-      site_id: selectedSiteId.value,
-      category_id: productForm.category_id
+  try {
+    const payload = {
+      name: productForm.name,
+      slug: productForm.slug,
+      description: productForm.description,
+      image_url: productForm.image_url,
+      name_en: productForm.name_en,
+      name_es: productForm.name_es,
+      part_number: productForm.part_number,
+      oem_number: productForm.oem_number,
+      car_model: productForm.car_model
     }
-  })
 
-  ElMessage.success('Product created')
-  Object.assign(productForm, {
-    name: '', slug: '', category_id: undefined, image_url: '', description: '', name_en: '', name_es: '', part_number: '', oem_number: '', car_model: ''
-  })
-  await loadProducts()
+    if (editingProductId.value) {
+      await api.put(`/products/${editingProductId.value}`, payload, {
+        params: { site_id: selectedSiteId.value, category_id: productForm.category_id }
+      })
+      ElMessage.success('Product updated')
+      editingProductId.value = null
+    } else {
+      await api.post('/products', payload, {
+        params: { site_id: selectedSiteId.value, category_id: productForm.category_id }
+      })
+      ElMessage.success('Product created')
+    }
+
+    Object.assign(productForm, {
+      name: '', slug: '', category_id: undefined, image_url: '', description: '', name_en: '', name_es: '', part_number: '', oem_number: '', car_model: ''
+    })
+    await loadProducts()
+  } catch (error: any) {
+    ElMessage.error(error.response?.data?.detail || 'Failed to submit product')
+  }
 }
 
 const createArticle = async () => {
@@ -294,6 +368,20 @@ html, body {
 
 #app {
   height: 100vh;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f3f7fb;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
 }
 
 .layout-container {

@@ -1,0 +1,39 @@
+--- web_transfer/admin_dashboard/src/App.vue
++++ web_transfer/admin_dashboard/src/App.vue
+@@ -3,68 +3,99 @@
++  <div v-if="!isLoggedIn" class="login-wrapper">
++    <el-card class="login-card">
++      <template #header><h2>Shindary Admin Login</h2></template>
++      <el-form label-position="top">
++        <el-form-item label="Username">
++          <el-input v-model="loginForm.username" />
++        </el-form-item>
++        <el-form-item label="Password">
++          <el-input v-model="loginForm.password" type="password" @keyup.enter="handleLogin" />
++        </el-form-item>
++        <el-button type="primary" class="w-full" @click="handleLogin">Sign In</el-button>
++      </el-form>
++    </el-card>
++  </div>
++
+-  <el-container class="layout-container">
++  <el-container v-else class="layout-container">
+@@ -34,3 +65,10 @@
+-        <el-select v-model="selectedSiteId" placeholder="Select site" class="site-select">
+-          <el-option v-for="site in sites" :key="site.id" :label="site.name" :value="site.id" />
+-        </el-select>
++        <div class="header-actions">
++          <el-select v-model="selectedSiteId" placeholder="Select site" class="site-select">
++            <el-option v-for="site in sites" :key="site.id" :label="site.name" :value="site.id" />
++          </el-select>
++          <el-button type="danger" text @click="handleLogout">Logout</el-button>
++        </div>
+@@ -43,3 +81,3 @@
+-                  <span>{{ activePanel === 'products' ? 'Add Product' : 'Add News Article' }}</span>
++                  <span>{{ activePanel === 'products' ? (editingProductId ? 'Edit Product' : 'Add Product') : 'Add News Article' }}</span>
+@@ -62,3 +100,6 @@
+-                <el-button type="primary" @click="createProduct">Create Product</el-button>
++                <el-button type="primary" @click="submitProduct">{{ editingProductId ? 'Update' : 'Create' }}</el-button>
++                <el-button v-if="editingProductId" @click="cancelEdit">Cancel</el-button>
+@@ -107,2 +148,3 @@
++                    <el-button type="primary" link @click="editProduct(scope.row)">Edit</el-button>
