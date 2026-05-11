@@ -11,7 +11,7 @@ ABOUT_SUBPAGE_SIDEBAR = [
 ]
 
 
-TEAM_GALLERY_BASE = "/migrated/about/our-team"
+TEAM_GALLERY_BASE = "/shindary_static/migrated/about/our-team"
 
 
 def _gallery_images(items):

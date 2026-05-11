@@ -10,7 +10,7 @@ HOMEPAGE_BY_SITE = {
             "description": "China auto parts expert covering 5000sqm warehouse capacity, 400000 plus auto parts products and exports to more than 80 markets.",
             "og_title": "Shindary Automotive Parts Co., Ltd.",
             "og_description": "China auto parts expert for CHANA, CHERY, Geely, JAC and more.",
-            "og_image": "/migrated/home/hero-5.jpg",
+            "og_image": "/shindary_static/migrated/home/hero-5.jpg",
             "og_url": "https://www.shindary.com/",
             "og_site_name": "Shindary Automotive Parts Co., Ltd."
         },
@@ -62,36 +62,36 @@ HOMEPAGE_BY_SITE = {
             {
                 "title": "China Auto Parts Expert, CHANA, CHERY, Geely, JAC",
                 "href": "/about-us",
-                "image": "/migrated/home/hero-1.jpg",
-                "mobile_image": "/migrated/home/hero-1.jpg",
+                "image": "/shindary_static/migrated/home/hero-1.jpg",
+                "mobile_image": "/shindary_static/migrated/home/hero-1.jpg",
                 "alt": "China Auto Parts Expert, CHANA, CHERY, Geely, JAC"
             },
             {
                 "title": "Auto Radiator, Auto Parts, China Car",
                 "href": "/radiator",
-                "image": "/migrated/home/hero-2.jpg",
-                "mobile_image": "/migrated/home/hero-2.jpg",
+                "image": "/shindary_static/migrated/home/hero-2.jpg",
+                "mobile_image": "/shindary_static/migrated/home/hero-2.jpg",
                 "alt": "Auto radiator, auto parts, China car"
             },
             {
                 "title": "Clutch, Auto Parts",
                 "href": "/clutch-kit",
-                "image": "/migrated/home/hero-3.jpg",
-                "mobile_image": "/migrated/home/hero-3.jpg",
+                "image": "/shindary_static/migrated/home/hero-3.jpg",
+                "mobile_image": "/shindary_static/migrated/home/hero-3.jpg",
                 "alt": "Clutch, auto parts"
             },
             {
                 "title": "Shock Absorber, Auto Parts",
                 "href": "/shock-absorber",
-                "image": "/migrated/home/hero-4.jpg",
-                "mobile_image": "/migrated/home/hero-4.jpg",
+                "image": "/shindary_static/migrated/home/hero-4.jpg",
+                "mobile_image": "/shindary_static/migrated/home/hero-4.jpg",
                 "alt": "Shock absorber, auto parts"
             },
             {
                 "title": "Chinese Auto Parts",
                 "href": "/contact",
-                "image": "/migrated/home/hero-5.jpg",
-                "mobile_image": "/migrated/home/hero-5.jpg",
+                "image": "/shindary_static/migrated/home/hero-5.jpg",
+                "mobile_image": "/shindary_static/migrated/home/hero-5.jpg",
                 "alt": "Chinese auto parts"
             }
         ],
@@ -104,22 +104,22 @@ HOMEPAGE_BY_SITE = {
                     "title": "Our Culture",
                     "description": "Serve for your values",
                     "href": "/about-us",
-                    "icon": "/migrated/home/feature-culture.png",
-                    "hover_icon": "/migrated/home/feature-culture-hover.png"
+                    "icon": "/shindary_static/migrated/home/feature-culture.png",
+                    "hover_icon": "/shindary_static/migrated/home/feature-culture-hover.png"
                 },
                 {
                     "title": "Our Team",
                     "description": "100 plus professional team",
                     "href": "/about-us",
-                    "icon": "/migrated/home/feature-team.png",
-                    "hover_icon": "/migrated/home/feature-team-hover.png"
+                    "icon": "/shindary_static/migrated/home/feature-team.png",
+                    "hover_icon": "/shindary_static/migrated/home/feature-team-hover.png"
                 },
                 {
                     "title": "Our Service",
                     "description": "Professional export package",
                     "href": "/about-us",
-                    "icon": "/migrated/home/feature-service.png",
-                    "hover_icon": "/migrated/home/feature-service-hover.png"
+                    "icon": "/shindary_static/migrated/home/feature-service.png",
+                    "hover_icon": "/shindary_static/migrated/home/feature-service-hover.png"
                 }
             ]
         },
@@ -127,72 +127,72 @@ HOMEPAGE_BY_SITE = {
             "title": "Brands We Serve",
             "href": "/products",
             "items": [
-                {"title": "ChangAn", "href": "/changan-chana", "image": "/migrated/home/brand-changan.webp"},
-                {"title": "CHERY", "href": "/chery", "image": "/migrated/home/brand-chery.webp"},
-                {"title": "Dongfeng", "href": "/dongfeng", "image": "/migrated/home/brand-dongfeng.webp"},
-                {"title": "Jac", "href": "/jac", "image": "/migrated/home/brand-jac.webp"},
-                {"title": "Greatwall", "href": "/greatwall", "image": "/migrated/home/brand-greatwall.webp"},
-                {"title": "CHEVROLET", "href": "/chevrolet", "image": "/migrated/home/brand-chevrolet.webp"},
-                {"title": "GEELY", "href": "/geely", "image": "/migrated/home/brand-geely.webp"},
-                {"title": "BYD", "href": "/byd", "image": "/migrated/home/brand-byd.webp"},
-                {"title": "ford", "href": "/ford", "image": "/migrated/home/brand-ford.webp"},
-                {"title": "nissan", "href": "/nissan", "image": "/migrated/home/brand-nissan.webp"},
-                {"title": "HYUNDAI", "href": "/hyundai", "image": "/migrated/home/brand-hyundai.webp"},
-                {"title": "KIA", "href": "/kia", "image": "/migrated/home/brand-kia.webp"},
-                {"title": "Isuzu", "href": "/isuzu", "image": "/migrated/home/brand-isuzu.webp"}
+                {"title": "ChangAn", "href": "/changan-chana", "image": "/shindary_static/migrated/home/brand-changan.webp"},
+                {"title": "CHERY", "href": "/chery", "image": "/shindary_static/migrated/home/brand-chery.webp"},
+                {"title": "Dongfeng", "href": "/dongfeng", "image": "/shindary_static/migrated/home/brand-dongfeng.webp"},
+                {"title": "Jac", "href": "/jac", "image": "/shindary_static/migrated/home/brand-jac.webp"},
+                {"title": "Greatwall", "href": "/greatwall", "image": "/shindary_static/migrated/home/brand-greatwall.webp"},
+                {"title": "CHEVROLET", "href": "/chevrolet", "image": "/shindary_static/migrated/home/brand-chevrolet.webp"},
+                {"title": "GEELY", "href": "/geely", "image": "/shindary_static/migrated/home/brand-geely.webp"},
+                {"title": "BYD", "href": "/byd", "image": "/shindary_static/migrated/home/brand-byd.webp"},
+                {"title": "ford", "href": "/ford", "image": "/shindary_static/migrated/home/brand-ford.webp"},
+                {"title": "nissan", "href": "/nissan", "image": "/shindary_static/migrated/home/brand-nissan.webp"},
+                {"title": "HYUNDAI", "href": "/hyundai", "image": "/shindary_static/migrated/home/brand-hyundai.webp"},
+                {"title": "KIA", "href": "/kia", "image": "/shindary_static/migrated/home/brand-kia.webp"},
+                {"title": "Isuzu", "href": "/isuzu", "image": "/shindary_static/migrated/home/brand-isuzu.webp"}
             ]
         },
         "product_tabs": [
             {
                 "label": "Selected Parts",
                 "items": [
-                    {"title": "Brake Disc 51712-C1000 for HYUNDAI", "href": "/brake-disc/brake-disc-51712-c1000-for-hyundai", "image": "/migrated/home/selected-1.webp"},
-                    {"title": "Radiator S111301110CA for CHERY", "href": "/part-number23/radiator-s111301110ca-for-chery", "image": "/migrated/home/selected-2.webp"},
-                    {"title": "Ball Joint R 2904100XPW01A for GREAT WALL POER", "href": "/ball-joint/ball-joint-r-2904100xpw01a-for-great-wall-poer", "image": "/migrated/home/selected-3.webp"},
-                    {"title": "Front Stabilizer Shaft Link Assy L 7701023433068 for FOTON TUNLAND", "href": "/part-number24/front-stabilizer-shaft-link-assy-l-7701023433068-for-foton-tunland", "image": "/migrated/home/selected-4.webp"},
-                    {"title": "Clutch Press Plate 1601002XPW01A-01 for GREAT WALL POER", "href": "/part-number28/clutch-press-plate-1601002xpw01a-01-for-great-wall-poer", "image": "/migrated/home/selected-5.webp"},
-                    {"title": "Front Shock Absorber L 546501R071 for HYUNDAI ACCENT", "href": "/part-number26/front-shock-absorber%EF%BC%8Cl-546501r071-for-hyundai-accent", "image": "/migrated/home/selected-6.webp"},
-                    {"title": "Control Arm UC2R34250D for MAZDA BT-50", "href": "/part-number25/control-arm-uc2r34250d-for-mazda-bt-50", "image": "/migrated/home/selected-7.webp"},
-                    {"title": "Brake Drum 58411-1C010 for HYUNDAI", "href": "/brake-drum/brake-drum-58411-1c010-for-hyundai", "image": "/migrated/home/selected-8.webp"}
+                    {"title": "Brake Disc 51712-C1000 for HYUNDAI", "href": "/brake-disc/brake-disc-51712-c1000-for-hyundai", "image": "/shindary_static/migrated/home/selected-1.webp"},
+                    {"title": "Radiator S111301110CA for CHERY", "href": "/part-number23/radiator-s111301110ca-for-chery", "image": "/shindary_static/migrated/home/selected-2.webp"},
+                    {"title": "Ball Joint R 2904100XPW01A for GREAT WALL POER", "href": "/ball-joint/ball-joint-r-2904100xpw01a-for-great-wall-poer", "image": "/shindary_static/migrated/home/selected-3.webp"},
+                    {"title": "Front Stabilizer Shaft Link Assy L 7701023433068 for FOTON TUNLAND", "href": "/part-number24/front-stabilizer-shaft-link-assy-l-7701023433068-for-foton-tunland", "image": "/shindary_static/migrated/home/selected-4.webp"},
+                    {"title": "Clutch Press Plate 1601002XPW01A-01 for GREAT WALL POER", "href": "/part-number28/clutch-press-plate-1601002xpw01a-01-for-great-wall-poer", "image": "/shindary_static/migrated/home/selected-5.webp"},
+                    {"title": "Front Shock Absorber L 546501R071 for HYUNDAI ACCENT", "href": "/part-number26/front-shock-absorber%EF%BC%8Cl-546501r071-for-hyundai-accent", "image": "/shindary_static/migrated/home/selected-6.webp"},
+                    {"title": "Control Arm UC2R34250D for MAZDA BT-50", "href": "/part-number25/control-arm-uc2r34250d-for-mazda-bt-50", "image": "/shindary_static/migrated/home/selected-7.webp"},
+                    {"title": "Brake Drum 58411-1C010 for HYUNDAI", "href": "/brake-drum/brake-drum-58411-1c010-for-hyundai", "image": "/shindary_static/migrated/home/selected-8.webp"}
                 ]
             },
             {
                 "label": "Hot Models",
                 "items": [
-                    {"title": "Automotive parts for DONGFENG SX6", "href": "/sx6/automotive-parts-for-dongfeng-sx6-1", "image": "/migrated/home/hot-model-1.webp"},
-                    {"title": "Spare parts for GREATWALL HAVAL JOLION", "href": "/haval-jolion/spare-parts-for-greatwall-haval-jolion", "image": "/migrated/home/hot-model-2.webp"},
-                    {"title": "Spare parts for GREATWALL F7", "href": "/f7/spare-parts-for-greatwall-f7", "image": "/migrated/home/hot-model-3.webp"},
-                    {"title": "Spare parts for Geely Coolray", "href": "/coolray/spare-parts-for-geely-coolray", "image": "/migrated/home/hot-model-4.webp"},
-                    {"title": "Spare parts for BYD NEW E2", "href": "/new-e2/spare-parts-for-byd-new-e2", "image": "/migrated/home/hot-model-5.webp"},
-                    {"title": "Spare parts for BYD ATTO3", "href": "/atto3/spare-parts-for-byd-atto3", "image": "/migrated/home/hot-model-6.webp"},
-                    {"title": "Auto spare parts for NEW SAIL", "href": "/new-sail/auto-spare-parts-for-new-sail", "image": "/migrated/home/hot-model-7.webp"},
-                    {"title": "Spare parts for CHEVROLET CAPTIVA", "href": "/captiva/spare-parts-for-chevrolet-captiva", "image": "/migrated/home/hot-model-8.webp"}
+                    {"title": "Automotive parts for DONGFENG SX6", "href": "/sx6/automotive-parts-for-dongfeng-sx6-1", "image": "/shindary_static/migrated/home/hot-model-1.webp"},
+                    {"title": "Spare parts for GREATWALL HAVAL JOLION", "href": "/haval-jolion/spare-parts-for-greatwall-haval-jolion", "image": "/shindary_static/migrated/home/hot-model-2.webp"},
+                    {"title": "Spare parts for GREATWALL F7", "href": "/f7/spare-parts-for-greatwall-f7", "image": "/shindary_static/migrated/home/hot-model-3.webp"},
+                    {"title": "Spare parts for Geely Coolray", "href": "/coolray/spare-parts-for-geely-coolray", "image": "/shindary_static/migrated/home/hot-model-4.webp"},
+                    {"title": "Spare parts for BYD NEW E2", "href": "/new-e2/spare-parts-for-byd-new-e2", "image": "/shindary_static/migrated/home/hot-model-5.webp"},
+                    {"title": "Spare parts for BYD ATTO3", "href": "/atto3/spare-parts-for-byd-atto3", "image": "/shindary_static/migrated/home/hot-model-6.webp"},
+                    {"title": "Auto spare parts for NEW SAIL", "href": "/new-sail/auto-spare-parts-for-new-sail", "image": "/shindary_static/migrated/home/hot-model-7.webp"},
+                    {"title": "Spare parts for CHEVROLET CAPTIVA", "href": "/captiva/spare-parts-for-chevrolet-captiva", "image": "/shindary_static/migrated/home/hot-model-8.webp"}
                 ]
             },
             {
                 "label": "Commercial",
                 "items": [
-                    {"title": "Spare parts for MAXUS T60", "href": "/t60/spare-parts-for-maxus-t60", "image": "/migrated/home/commercial-1.webp"},
-                    {"title": "Spare parts for FOTON TUNLAND", "href": "/tunland-1/spare-parts-for-foton-tunland", "image": "/migrated/home/commercial-2.webp"},
-                    {"title": "Spare parts for Great Wall POER", "href": "/poer/spare-parts-for-great-wall-poer", "image": "/migrated/home/commercial-3.webp"},
-                    {"title": "Spare parts for Great Wall Wingle 5", "href": "/wingle-5-1/spare-parts-for-great-wall-wingle-5", "image": "/migrated/home/commercial-4.webp"},
-                    {"title": "Spare parts for CHANGAN HUNTER", "href": "/hunter-1/spare-parts-for-changan-hunter", "image": "/migrated/home/commercial-5.webp"},
-                    {"title": "Spare parts for GreatWall Wingle 7", "href": "/wingle-7-1/spare-parts-for-greatwall-wingle-7", "image": "/migrated/home/commercial-6.webp"},
-                    {"title": "Spare parts for JAC T8", "href": "/t8/spare-parts-for-jac-t8", "image": "/migrated/home/commercial-7.webp"},
-                    {"title": "Spare parts for ISUZU D-MAX", "href": "/d-max-1/spare-parts-for-isuzu-d-max", "image": "/migrated/home/commercial-8.webp"}
+                    {"title": "Spare parts for MAXUS T60", "href": "/t60/spare-parts-for-maxus-t60", "image": "/shindary_static/migrated/home/commercial-1.webp"},
+                    {"title": "Spare parts for FOTON TUNLAND", "href": "/tunland-1/spare-parts-for-foton-tunland", "image": "/shindary_static/migrated/home/commercial-2.webp"},
+                    {"title": "Spare parts for Great Wall POER", "href": "/poer/spare-parts-for-great-wall-poer", "image": "/shindary_static/migrated/home/commercial-3.webp"},
+                    {"title": "Spare parts for Great Wall Wingle 5", "href": "/wingle-5-1/spare-parts-for-great-wall-wingle-5", "image": "/shindary_static/migrated/home/commercial-4.webp"},
+                    {"title": "Spare parts for CHANGAN HUNTER", "href": "/hunter-1/spare-parts-for-changan-hunter", "image": "/shindary_static/migrated/home/commercial-5.webp"},
+                    {"title": "Spare parts for GreatWall Wingle 7", "href": "/wingle-7-1/spare-parts-for-greatwall-wingle-7", "image": "/shindary_static/migrated/home/commercial-6.webp"},
+                    {"title": "Spare parts for JAC T8", "href": "/t8/spare-parts-for-jac-t8", "image": "/shindary_static/migrated/home/commercial-7.webp"},
+                    {"title": "Spare parts for ISUZU D-MAX", "href": "/d-max-1/spare-parts-for-isuzu-d-max", "image": "/shindary_static/migrated/home/commercial-8.webp"}
                 ]
             },
             {
                 "label": "Hot Selling",
                 "items": [
-                    {"title": "Starter 36100-11140 for HYUNDAI", "href": "/hot-selling/59641", "image": "/migrated/home/hot-selling-1.webp"},
-                    {"title": "Generator 31400-85Z00 for CHEVROLET", "href": "/hot-selling/59640", "image": "/migrated/home/hot-selling-2.webp"},
-                    {"title": "Starter 3610023160 for HYUNDAI TUCSON", "href": "/hot-selling/59635", "image": "/migrated/home/hot-selling-3.webp"},
-                    {"title": "Air filter PE07133A0A for MAZDA", "href": "/hot-selling/59631", "image": "/migrated/home/hot-selling-4.webp"},
-                    {"title": "Compressor 977012S601 for KIA", "href": "/hot-selling/compressor-977012s601-for-kia", "image": "/migrated/home/hot-selling-5.webp"},
-                    {"title": "Starting machine 8941566711 for CHEVROLET", "href": "/hot-selling/starting-machine-8941566711-for-chevrolet", "image": "/migrated/home/hot-selling-6.webp"},
-                    {"title": "Generator OK30D18300 for KIA", "href": "/hot-selling/generator-ok30d18300-for-kia", "image": "/migrated/home/hot-selling-7.webp"},
-                    {"title": "Front control arm ball joint pin assy A21-2909060BB for CHERY", "href": "/hot-selling/front-control-arm-ball-joint-pin-assy-a21-2909060bb-for-chery", "image": "/migrated/home/hot-selling-8.webp"}
+                    {"title": "Starter 36100-11140 for HYUNDAI", "href": "/hot-selling/59641", "image": "/shindary_static/migrated/home/hot-selling-1.webp"},
+                    {"title": "Generator 31400-85Z00 for CHEVROLET", "href": "/hot-selling/59640", "image": "/shindary_static/migrated/home/hot-selling-2.webp"},
+                    {"title": "Starter 3610023160 for HYUNDAI TUCSON", "href": "/hot-selling/59635", "image": "/shindary_static/migrated/home/hot-selling-3.webp"},
+                    {"title": "Air filter PE07133A0A for MAZDA", "href": "/hot-selling/59631", "image": "/shindary_static/migrated/home/hot-selling-4.webp"},
+                    {"title": "Compressor 977012S601 for KIA", "href": "/hot-selling/compressor-977012s601-for-kia", "image": "/shindary_static/migrated/home/hot-selling-5.webp"},
+                    {"title": "Starting machine 8941566711 for CHEVROLET", "href": "/hot-selling/starting-machine-8941566711-for-chevrolet", "image": "/shindary_static/migrated/home/hot-selling-6.webp"},
+                    {"title": "Generator OK30D18300 for KIA", "href": "/hot-selling/generator-ok30d18300-for-kia", "image": "/shindary_static/migrated/home/hot-selling-7.webp"},
+                    {"title": "Front control arm ball joint pin assy A21-2909060BB for CHERY", "href": "/hot-selling/front-control-arm-ball-joint-pin-assy-a21-2909060bb-for-chery", "image": "/shindary_static/migrated/home/hot-selling-8.webp"}
                 ]
             }
         ],
@@ -204,19 +204,19 @@ HOMEPAGE_BY_SITE = {
                     "title": "SHINDARY PRODUCTS SPARE PARTS NUMBERS FOR STEERING SYSTEM",
                     "href": "/news/shindary-productsspare-parts-numbers-for-steering-system-51",
                     "excerpt": "Following sheet is part codes catalogue for steering system. This product is very versatile and applies to Zotye, JMC, DFM, Geely, Changhe, BAIC, BYD, FAW, FOTON, JAC, DFSK and Mazda.",
-                    "image": "/migrated/home/news-1.webp"
+                    "image": "/shindary_static/migrated/home/news-1.webp"
                 },
                 {
                     "title": "SHINDARY PRODUCTS SPARE PARTS NUMBERS FOR BRAKING SYSTEM",
                     "href": "/news/shindary-productsspare-parts-numbers-for-braking-system-51",
                     "excerpt": "Following sheet is part codes catalogue for braking system. This product is very versatile and applies to Zotye, JMC, DFM, Geely, Changhe, BAIC, BYD, FAW, FOTON, JAC, DFSK and Mazda.",
-                    "image": "/migrated/home/news-2.webp"
+                    "image": "/shindary_static/migrated/home/news-2.webp"
                 },
                 {
                     "title": "SHINDARY PRODUCTS SPARE PARTS NUMBERS FOR TIMING SYSTEM",
                     "href": "/news/shindary-productsspare-parts-numbers-for-timing-system-51",
                     "excerpt": "Following sheet is part codes catalogue for timing system. This product is very versatile and applies to Zotye, JMC, DFM, Geely, Changhe, BAIC, BYD, FAW, FOTON, JAC, DFSK and Mazda.",
-                    "image": "/migrated/home/news-3.webp"
+                    "image": "/shindary_static/migrated/home/news-3.webp"
                 }
             ]
         },

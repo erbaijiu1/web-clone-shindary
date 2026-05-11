@@ -38,7 +38,7 @@ ABOUT_PAGE_BY_SITE = {
                     "Shindary represented six system-parts brands from trustworthy factories and turned them into stable supply lines with export-grade quality control.",
                     "The company keeps a practical balance between OEM support, aftermarket replacement parts and customized packaging for overseas distribution projects."
                 ],
-                "image": "/migrated/about/company-profile.jpg",
+                "image": "/shindary_static/migrated/about/company-profile.jpg",
                 "image_alt": "Company profile"
             },
             {
@@ -47,7 +47,7 @@ ABOUT_PAGE_BY_SITE = {
                     "DERY, PORSTEC, OSTECH, TIMCO, MORUND and COOPATER represent Shindary's system-parts supply capability and long-term factory relationships.",
                     "The portfolio is positioned around stable sourcing, product consistency and export service support."
                 ],
-                "image": "/migrated/about/system-brands.webp",
+                "image": "/shindary_static/migrated/about/system-brands.webp",
                 "image_alt": "System parts brands"
             },
             {
@@ -56,7 +56,7 @@ ABOUT_PAGE_BY_SITE = {
                     "Shindary maintains qualification and certification materials to support supplier trust, dealer onboarding and international trade compliance.",
                     "These credentials help standardize cooperation with overseas partners and project-based procurement teams."
                 ],
-                "image": "/migrated/about/certificates.webp",
+                "image": "/shindary_static/migrated/about/certificates.webp",
                 "image_alt": "Certificates"
             },
             {
@@ -65,7 +65,7 @@ ABOUT_PAGE_BY_SITE = {
                     "From its founding in Chongqing to multi-country distribution, Shindary has grown by gradually expanding product breadth, warehouse capacity and export coverage.",
                     "Its business evolution reflects both domestic parts expertise and growing overseas channel integration."
                 ],
-                "image": "/migrated/about/development-history.webp",
+                "image": "/shindary_static/migrated/about/development-history.webp",
                 "image_alt": "Development history"
             },
             {
@@ -74,7 +74,7 @@ ABOUT_PAGE_BY_SITE = {
                     "The management structure supports category coordination, export sales, warehouse execution and customer-response workflows.",
                     "This operating frame is designed to keep product sourcing, quotation response and shipment follow-up aligned."
                 ],
-                "image": "/migrated/about/management-frame.webp",
+                "image": "/shindary_static/migrated/about/management-frame.webp",
                 "image_alt": "Management frame"
             },
             {
@@ -83,7 +83,7 @@ ABOUT_PAGE_BY_SITE = {
                     "A team of more than 100 specialists supports the company across sourcing, sales, packaging, logistics and after-sales communication.",
                     "Shindary positions its team as a long-term service extension for importers, distributors and project buyers."
                 ],
-                "image": "/migrated/about/our-team.webp",
+                "image": "/shindary_static/migrated/about/our-team.webp",
                 "image_alt": "Our team"
             }
         ]

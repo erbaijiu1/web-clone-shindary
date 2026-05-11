@@ -18,4 +18,4 @@ backend_dev/venv/
 backend_dev/app/data/__pycache__/
 backend_dev/app/__pycache__/
 backend_dev/app/__pycache__/main.cpython-310.pyc
-*.pyc
+*.pycfrontend_nuxt/public/data/

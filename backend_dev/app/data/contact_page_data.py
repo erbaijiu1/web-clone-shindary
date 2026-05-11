@@ -48,7 +48,7 @@ CONTACT_PAGE_BY_SITE = {
                 "phone": "+86 152 1321 2350"
             }
         ],
-        "map_image": "/migrated/contact/xinderuiaa.jpg",
+        "map_image": "/shindary_static/migrated/contact/xinderuiaa.jpg",
         "feedback_title": "feedback",
         "feedback_notice": "This migrated page preserves the original feedback form layout. Submission wiring can be connected to a dedicated backend workflow later."
     }
