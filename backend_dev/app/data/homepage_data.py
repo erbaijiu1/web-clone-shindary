@@ -56,8 +56,7 @@ HOMEPAGE_BY_SITE = {
             {"label": "Contact Us", "href": "/contact", "children": []}
         ],
         "language_links": [
-            {"label": "EN", "href": "/", "active": True},
-            {"label": "Español", "href": "https://es.shindary.com/", "external": True, "active": False}
+            {"label": "EN", "href": "/", "active": True}
         ],
         "hero_slides": [
             {

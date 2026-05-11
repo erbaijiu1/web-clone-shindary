@@ -1,1 +1,18 @@
-node_modules/
+.DS_Store
+
+# Frontend dependencies and build output
+frontend_nuxt/node_modules/
+frontend_nuxt/.nuxt/
+frontend_nuxt/.output/
+
+# Admin dashboard dependencies and build output
+admin_dashboard/node_modules/
+admin_dashboard/dist/
+
+# Backend virtualenv and Python cache
+backend_dev/venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/.mypy_cache/
+backend_dev/app/data/__pycache__/

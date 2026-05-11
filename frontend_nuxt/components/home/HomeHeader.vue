@@ -60,26 +60,34 @@
         </nav>
 
         <div class="hidden shrink-0 items-center gap-2 xl:flex">
-          <template v-for="item in languageLinks" :key="item.label">
-            <a
-              v-if="item.external"
-              :href="item.href"
-              target="_blank"
-              rel="noreferrer"
-              class="rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition"
-              :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600 hover:border-slate-300'"
-            >
-              {{ item.label }}
-            </a>
-            <NuxtLink
-              v-else
-              :to="item.href"
-              class="rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition"
-              :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600 hover:border-slate-300'"
-            >
-              {{ item.label }}
-            </NuxtLink>
+          <template v-if="hasMultipleLanguages">
+            <template v-for="item in languageLinks" :key="item.label">
+              <a
+                v-if="item.external"
+                :href="item.href"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition"
+                :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600 hover:border-slate-300'"
+              >
+                {{ item.label }}
+              </a>
+              <NuxtLink
+                v-else
+                :to="item.href"
+                class="rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition"
+                :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600 hover:border-slate-300'"
+              >
+                {{ item.label }}
+              </NuxtLink>
+            </template>
           </template>
+          <span
+            v-else-if="primaryLanguage"
+            class="rounded-full bg-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600"
+          >
+            {{ primaryLanguage.label }}
+          </span>
 
           <a
             href="mailto:overseas@shindary.com"
@@ -131,27 +139,35 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-2 pt-2">
-            <template v-for="item in languageLinks" :key="`mobile-lang-${item.label}`">
-              <a
-                v-if="item.external"
-                :href="item.href"
-                target="_blank"
-                rel="noreferrer"
-                class="rounded-full border px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em]"
-                :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600'"
-              >
-                {{ item.label }}
-              </a>
-              <NuxtLink
-                v-else
-                :to="item.href"
-                class="rounded-full border px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em]"
-                :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600'"
-              >
-                {{ item.label }}
-              </NuxtLink>
+          <div v-if="hasMultipleLanguages || primaryLanguage" class="flex flex-wrap gap-2 pt-2">
+            <template v-if="hasMultipleLanguages">
+              <template v-for="item in languageLinks" :key="`mobile-lang-${item.label}`">
+                <a
+                  v-if="item.external"
+                  :href="item.href"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="rounded-full border px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em]"
+                  :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600'"
+                >
+                  {{ item.label }}
+                </a>
+                <NuxtLink
+                  v-else
+                  :to="item.href"
+                  class="rounded-full border px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em]"
+                  :class="item.active ? 'border-[#0b4b99] bg-[#0b4b99] text-white' : 'border-slate-200 text-slate-600'"
+                >
+                  {{ item.label }}
+                </NuxtLink>
+              </template>
             </template>
+            <span
+              v-else-if="primaryLanguage"
+              class="rounded-full bg-slate-100 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600"
+            >
+              {{ primaryLanguage.label }}
+            </span>
           </div>
         </div>
       </div>
@@ -181,4 +197,6 @@ const mobileOpen = ref(false)
 
 const phoneHref = computed(() => `tel:${props.contact.phone.replace(/\s+/g, '')}`)
 const emailHref = computed(() => `mailto:${props.contact.email}`)
+const hasMultipleLanguages = computed(() => props.languageLinks.length > 1)
+const primaryLanguage = computed(() => props.languageLinks[0] ?? null)
 </script>
