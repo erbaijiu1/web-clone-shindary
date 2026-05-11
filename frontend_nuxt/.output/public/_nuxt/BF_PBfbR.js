@@ -1,1 +1,0 @@
-import{_ as e}from"./D_CfPd5a.js";import{h as t,o as a}from"./BRJDV0F4.js";import"./BBnuQyT9.js";import"./Lg8g8wdP.js";import"./CKHfAjCP.js";const l={__name:"index",setup(r){return(p,_)=>{const o=e;return a(),t(o,{"page-slug":"video","fallback-title":"Video"})}}};export{l as default};

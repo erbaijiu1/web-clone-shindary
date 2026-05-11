@@ -1,1 +1,0 @@
-import{_ as o}from"./D_CfPd5a.js";import{h as t,o as a}from"./BRJDV0F4.js";import"./BBnuQyT9.js";import"./Lg8g8wdP.js";import"./CKHfAjCP.js";const l={__name:"index",setup(r){return(s,p)=>{const e=o;return a(),t(e,{"page-slug":"sales-network","fallback-title":"Sales Network"})}}};export{l as default};

@@ -1,1 +1,0 @@
-{"file":"index-D9nIuBbc.js","mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;QACoB,aAAU;AAAA,QAAQ,kBAAe;AAAA;;;;;;;;;;","names":[],"sources":["../../../../pages/video/index.vue"],"sourcesContent":["<template>\n  <AboutSubpagePage page-slug=\"video\" fallback-title=\"Video\" />\n</template>\n\n<script setup>\ndefinePageMeta({\n  layout: false\n})\n</script>"],"version":3}
