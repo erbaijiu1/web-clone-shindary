@@ -132,7 +132,10 @@ import axios from 'axios'
 import { Document, Goods } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 
-const api = axios.create({ baseURL: 'http://127.0.0.1:8000/api/v1/admin' })
+const siteCode = import.meta.env.VITE_SITE_CODE || 'shindary'
+const apiOrigin = import.meta.env.VITE_API_ORIGIN || 'http://127.0.0.1:8000'
+
+const api = axios.create({ baseURL: `${apiOrigin}/${siteCode}/api/v1/admin` })
 
 const activePanel = ref('products')
 const sites = ref<any[]>([])

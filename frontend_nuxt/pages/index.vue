@@ -43,8 +43,8 @@
               class="group rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#0b4b99]"
             >
               <div class="relative h-20 w-20 overflow-hidden rounded-3xl bg-slate-50">
-                <img :src="feature.icon" :alt="feature.title" class="absolute inset-0 h-full w-full object-contain p-3 transition duration-300 group-hover:opacity-0" />
-                <img :src="feature.hover_icon" :alt="feature.title" class="absolute inset-0 h-full w-full object-contain p-3 opacity-0 transition duration-300 group-hover:opacity-100" />
+                <img :src="resolveSiteAssetUrl(feature.icon)" :alt="feature.title" class="absolute inset-0 h-full w-full object-contain p-3 transition duration-300 group-hover:opacity-0" />
+                <img :src="resolveSiteAssetUrl(feature.hover_icon)" :alt="feature.title" class="absolute inset-0 h-full w-full object-contain p-3 opacity-0 transition duration-300 group-hover:opacity-100" />
               </div>
               <h3 class="mt-6 text-xl font-semibold text-slate-900">{{ feature.title }}</h3>
               <p class="mt-3 text-sm leading-7 text-slate-600">{{ feature.description }}</p>
@@ -75,7 +75,7 @@
               :to="brand.href"
               class="flex min-w-[180px] shrink-0 snap-start flex-col items-center justify-center rounded-[1.5rem] border border-slate-200 bg-slate-50 px-6 py-8 transition duration-300 hover:-translate-y-1 hover:border-[#0b4b99] hover:bg-white"
             >
-              <img :src="brand.image" :alt="brand.title" class="h-14 w-auto object-contain" />
+              <img :src="resolveSiteAssetUrl(brand.image)" :alt="brand.title" class="h-14 w-auto object-contain" />
               <p class="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-slate-700">{{ brand.title }}</p>
             </NuxtLink>
           </div>
@@ -117,7 +117,7 @@
                 :to="article.href"
                 class="group grid gap-5 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 transition duration-300 hover:border-[#0b4b99] hover:bg-white sm:grid-cols-[160px,1fr]"
               >
-                <img :src="article.image" :alt="article.title" class="h-full min-h-[140px] w-full rounded-[1.1rem] object-cover" />
+                <img :src="resolveSiteAssetUrl(article.image)" :alt="article.title" class="h-full min-h-[140px] w-full rounded-[1.1rem] object-cover" />
                 <div>
                   <h3 class="text-lg font-semibold leading-7 text-slate-900 transition group-hover:text-[#0b4b99]">{{ article.title }}</h3>
                   <p class="mt-3 text-sm leading-7 text-slate-600">{{ article.excerpt }}</p>
@@ -138,7 +138,7 @@
         <a
           v-for="action in homeData.floating_actions"
           :key="action.label"
-          :href="action.href"
+          :href="action.external ? action.href : resolveSiteAssetUrl(action.href)"
           :target="action.external ? '_blank' : undefined"
           :rel="action.external ? 'noreferrer' : undefined"
           class="rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:border-[#0b4b99] hover:text-[#0b4b99]"
@@ -161,6 +161,7 @@ definePageMeta({
 })
 
 const config = useRuntimeConfig()
+const resolveSiteAssetUrl = useSiteAssetUrl()
 const brandsScroller = ref(null)
 
 const { data: homeData, pending, error } = await useFetch(`${config.public.apiBase}/${config.public.siteCode}/api/v1/public/home`)

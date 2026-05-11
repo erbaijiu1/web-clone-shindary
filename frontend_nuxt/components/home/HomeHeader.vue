@@ -14,7 +14,7 @@
     <div class="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between gap-6 py-3 lg:gap-8 lg:py-4">
         <NuxtLink to="/" class="shrink-0">
-          <img src="/migrated/shared/logo.png" alt="Shindary Automotive Parts" class="h-12 w-auto lg:h-[74px]" />
+          <img :src="logoUrl" alt="Shindary Automotive Parts" class="h-12 w-auto lg:h-[74px]" />
         </NuxtLink>
 
         <nav class="hidden min-w-0 flex-1 items-center justify-center gap-4 lg:flex xl:gap-6 2xl:gap-8">
@@ -193,7 +193,9 @@ const props = defineProps({
   }
 })
 
+const resolveSiteAssetUrl = useSiteAssetUrl()
 const mobileOpen = ref(false)
+const logoUrl = resolveSiteAssetUrl('/migrated/shared/logo.png')
 
 const phoneHref = computed(() => `tel:${props.contact.phone.replace(/\s+/g, '')}`)
 const emailHref = computed(() => `mailto:${props.contact.email}`)

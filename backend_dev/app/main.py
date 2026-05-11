@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(public.router, prefix="/{site_code}/api/v1/public", tags=["public"])
-app.include_router(admin.router, prefix="/api/v1/admin", tags=["admin"])
+app.include_router(admin.router, prefix="/{site_code}/api/v1/admin", tags=["admin"])
 
 @app.get("/")
 def read_root():

@@ -16,3 +16,6 @@ backend_dev/venv/
 **/.pytest_cache/
 **/.mypy_cache/
 backend_dev/app/data/__pycache__/
+backend_dev/app/__pycache__/
+backend_dev/app/__pycache__/main.cpython-310.pyc
+*.pyc

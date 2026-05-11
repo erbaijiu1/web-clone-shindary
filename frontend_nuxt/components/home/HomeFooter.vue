@@ -4,7 +4,7 @@
     <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="grid gap-10 lg:grid-cols-[1.25fr,1fr,1fr,1fr]">
         <div>
-          <img src="/migrated/shared/logo.png" alt="Shindary" class="h-14 w-auto rounded-2xl bg-white p-2" />
+          <img :src="logoUrl" alt="Shindary" class="h-14 w-auto rounded-2xl bg-white p-2" />
           <h2 class="mt-6 text-2xl font-semibold">{{ contact.company }}</h2>
           <p class="mt-4 max-w-md text-sm leading-7 text-slate-300">{{ contact.address }}</p>
           <div class="mt-6 space-y-2 text-sm text-slate-300">
@@ -55,6 +55,9 @@
 </template>
 
 <script setup>
+const resolveSiteAssetUrl = useSiteAssetUrl()
+const logoUrl = resolveSiteAssetUrl('/migrated/shared/logo.png')
+
 defineProps({
   contact: {
     type: Object,

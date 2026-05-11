@@ -10,8 +10,8 @@
         :class="index === activeIndex ? 'opacity-100' : 'pointer-events-none opacity-0'"
       >
         <picture>
-          <source :srcset="slide.mobile_image || slide.image" media="(max-width: 767px)" />
-          <img :src="slide.image" :alt="slide.alt" class="h-full w-full object-cover" />
+          <source :srcset="resolveSiteAssetUrl(slide.mobile_image || slide.image)" media="(max-width: 767px)" />
+          <img :src="resolveSiteAssetUrl(slide.image)" :alt="slide.alt" class="h-full w-full object-cover" />
         </picture>
         <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.82)_0%,rgba(2,6,23,0.45)_45%,rgba(2,6,23,0.12)_100%)]" />
 
@@ -87,6 +87,7 @@ const props = defineProps({
   }
 })
 
+const resolveSiteAssetUrl = useSiteAssetUrl()
 const activeIndex = ref(0)
 let intervalId
 

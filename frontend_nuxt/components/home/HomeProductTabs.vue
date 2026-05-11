@@ -27,7 +27,7 @@
         class="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-50 transition duration-300 hover:-translate-y-1 hover:border-[#0b4b99] hover:bg-white hover:shadow-[0_20px_40px_rgba(11,75,153,0.12)]"
       >
         <div class="flex aspect-[4/3] items-center justify-center bg-white p-5">
-          <img :src="item.image" :alt="item.title" class="max-h-44 w-full object-contain transition duration-500 group-hover:scale-105" />
+          <img :src="resolveSiteAssetUrl(item.image)" :alt="item.title" class="max-h-44 w-full object-contain transition duration-500 group-hover:scale-105" />
         </div>
         <div class="space-y-3 p-5">
           <p class="line-clamp-2 min-h-[3.5rem] text-sm font-semibold leading-6 text-slate-800">{{ item.title }}</p>
@@ -51,6 +51,7 @@ const props = defineProps({
   }
 })
 
+const resolveSiteAssetUrl = useSiteAssetUrl()
 const activeIndex = ref(0)
 
 const activeTab = computed(() => props.tabs[activeIndex.value] || { items: [] })
